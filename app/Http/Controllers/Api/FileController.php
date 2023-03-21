@@ -15,7 +15,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        return File::with('usability','userhost.host','userhost.users')->get();
+        return File::with('usability','userhost.host','userhost.user')->get();
     }
 
     /**
@@ -45,7 +45,7 @@ class FileController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'file'=>$file
+            'data'=>$file
         ],200);
     }
 

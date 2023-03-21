@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\UsabilityController;
 use App\Http\Controllers\Api\UserHostController;
 use App\Http\Controllers\Api\FileController;
 use App\Http\Controllers\Api\AllController;
+use App\Http\Controllers\Api\ImageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,25 +31,12 @@ Route::get('/', function () {
 });
 Route::name('api.')->group(function(){
     Route::resource('roles',RoleController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('users',UserController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('profiles',ProfileController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('hosts',HostController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('usabilities',UsabilityController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('userhosts',UserHostController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('files',FileController::class);
-});
-Route::name('api.')->group(function(){
     Route::resource('alls',AllController::class);
+    Route::resource('images',ImageController::class);
 });

@@ -37,7 +37,7 @@ class UsabilityController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'usability'=>$usability
+            'data'=>$usability
         ],200);
     }
 

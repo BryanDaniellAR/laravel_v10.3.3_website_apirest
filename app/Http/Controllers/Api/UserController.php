@@ -43,7 +43,7 @@ class UserController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'user'=>$user
+            'data'=>$user
         ],200);
     }
 

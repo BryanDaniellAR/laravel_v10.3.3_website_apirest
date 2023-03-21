@@ -15,7 +15,7 @@ class UserHostController extends Controller
      */
     public function index()
     {
-        return UserHost::with('users','host')->get();
+        return UserHost::with('user','host')->get();
     }
 
     /**
@@ -40,7 +40,7 @@ class UserHostController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'userhost'=>$userhost
+            'data'=>$userhost
         ],200);
     }
 

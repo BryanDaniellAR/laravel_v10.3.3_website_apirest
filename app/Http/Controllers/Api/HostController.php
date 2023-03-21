@@ -37,7 +37,7 @@ class HostController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'host'=>$host
+            'data'=>$host
         ],200);
     }
 

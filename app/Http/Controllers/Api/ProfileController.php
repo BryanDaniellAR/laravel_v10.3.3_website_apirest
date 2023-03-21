@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return Profile::with('users')->get();
+        return Profile::with('user')->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class ProfileController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'profile'=>$profile
+            'data'=>$profile
         ],200);
     }
 

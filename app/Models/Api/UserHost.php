@@ -16,7 +16,7 @@ class UserHost extends Model
         'idHost',
         'id'
     ];
-    public function users(){
+    public function user(){
         return $this->hasOne(User::class,'id','id');
     }
     public function host(){

@@ -37,7 +37,7 @@ class RoleController extends Controller
     {
         return response()->json([
             'res'=>true,
-            'role'=>$role
+            'data'=>$role
         ],200);
     }
 

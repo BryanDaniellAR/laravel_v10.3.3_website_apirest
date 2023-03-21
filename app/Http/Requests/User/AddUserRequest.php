@@ -23,7 +23,7 @@ class AddUserRequest extends FormRequest
     {
         return [
             "name"=>"required",
-            "email"=>"required|unique:users,email",
+            "email"=>"required|unique:user,email",
             "password"=>"required",
             "idRol"=>"required",
         ];

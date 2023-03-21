@@ -19,7 +19,7 @@ class Profile extends Model
         'id',
         'name'
     ];
-    public function users(){
+    public function user(){
         return $this->hasOne(User::class,'id','id');
     }
 }
