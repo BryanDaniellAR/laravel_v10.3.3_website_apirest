@@ -24,8 +24,12 @@ class ImageController extends Controller
     public function store(AddImageRequest $request)
     {
         $data = $request->all();
-        $data['url']=env('APP_URL').'/assets/img/'.$request->name.'.'.$request->image->extension();
-        $path = $request->file('image')->storeAs('public/assets/img/'.$request->name.'.'.$request->image->extension());
+        if($data['extension']=='gif'){
+            $data['url']=env('APP_URL').'/assets/img/'.$request->name.'.gif';
+        }else{
+            $data['url']=env('APP_URL').'/assets/img/'.$request->name.'.png';
+        }
+        //$path = $request->file('image')->storeAs('public/assets/img/'.$request->name.'.png');
         Image::create($data);
         return response()->json([
             'res'=>true,
@@ -61,7 +65,7 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
-        unlink(storage_path().'\app\public\assets\img/'.$image->name.'.png');
+        //unlink(storage_path().'\app\public\assets\img/'.$image->name.'.png');
         $image->delete();
         return response()->json([
             'res'=>true,

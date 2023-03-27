@@ -23,7 +23,8 @@ class AddImageRequest extends FormRequest
     {
         return [
             "name"=>"required|unique:image,name",
-            "image"=>"required|image|mimes:jpeg,png,jpg,gif,svg"
+            "extension"=>"required",
+            //"image"=>"required|image|mimes:jpeg,png,jpg,gif,svg"
         ];
     }
 }
